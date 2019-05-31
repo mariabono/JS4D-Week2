@@ -30,12 +30,13 @@ h1 {
 
 main {
     position: relative;
-    z-index: 5;
+    z-index: 1;
     background-color: #ffffff;
     min-height: 100vh;
+
+    transition: transform 0.5s;
  
 }
-
 
 main.open {
     transform: translate(240px, 0);
@@ -44,7 +45,7 @@ main.open {
 nav {
     position: fixed;
     top: 0;
-    left: 0;
+    left: -240px;
     width: 240px;
     height: 100vh;
 
@@ -57,7 +58,16 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    transition: left 0.5s;
+    z-index: 2;
+
 }
+
+
+nav.open {
+    left: 0;
+} 
 
 
 nav a {
